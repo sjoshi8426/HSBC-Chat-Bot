@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Chatbot</title>
+  <meta name="description" content="This is a test chatbot for EY">
+  <meta name="author" content="Sukrit Goel" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=trying">
+  <link rel="stylesheet" media="screen" href="css/login.css">
+</head>
+
+<body>
+<!-- particles.js container -->
+<div id="particles-js">
+	<div id="login_heading">
+	  <h2 align="center">
+		Welcome to HSBC
+	  </h2>
+	</div>
+
+	<div class="botContainer">
+    <iframe src='https://webchat.botframework.com/embed/HSBCBotEYtrial?s=YBUPh02N-QY.QTPlK0aKupOlBT0ZNdtEuagha91hqoKeyEYfY9GmQJM'  style='min-width: 500px; width: 100%; min-height: 430px;'></iframe>
+		<!-- <iframe style="height: 500px; background-color:white" src='https://webchat.botframework.com/embed/EyBotDemoSbiGi?s=WpPjnPR_J1c.cwA.uJQ.VXDkwGWKlqomhcLmQ_HTntoypMyZ216VJs-H5Jda5X0'></iframe> -->
+	</div>
+
+	<div id="oneline">
+	  <h4 align="center">
+		Hello! I'm a conversational bot to assist you.
+	  </h4>
+	</div>
+</div>
+
+<!-- scripts -->
+<script src="js/particles.js"></script>
+<script src="js/app.js"></script>
+
+<script>
+  var count_particles, stats, update;
+  stats = new Stats;
+  stats.setMode(0);
+  stats.domElement.style.position = 'absolute';
+  stats.domElement.style.left = '0px';
+  stats.domElement.style.top = '0px';
+  document.body.appendChild(stats.domElement);
+  count_particles = document.querySelector('.js-count-particles');
+  update = function() {
+    stats.begin();
+    stats.end();
+    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+    }
+    requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+</script>
+
+<style>
+.botContainer
+{
+position: absolute;
+    right: 0px;
+    /* width: 300px; */
+    /* padding: 10px; */
+	bottom:0px;
+
+}
+
+.wc-chatview-panel
+{
+background-color: white!important;;
+}
+
+.wc-header
+{
+
+    background-color: #7b7676!important;
+}
+
+</style>
+
+</body>
+</html>
